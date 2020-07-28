@@ -10,6 +10,7 @@ import {
   showMines,
   wonGame,
   hadExplosion,
+  invertFlag,
 } from './logics';
 
 function minesAmount() {
@@ -49,6 +50,19 @@ export default (props) => {
     setLost(_lost);
   }
 
+  function onSelectField(row, column) {
+    const _board = cloneBoard(board);
+    invertFlag(_board, row, column);
+    const _won = wonGame(_board);
+
+    if (_won) {
+      Alert.alert('Parabéns', 'Você vençeu!');
+    }
+
+    setBoard(_board);
+    setWon(_won);
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>Iniciando o Mines!</Text>
@@ -58,7 +72,11 @@ export default (props) => {
       </Text>
 
       <View style={styles.board}>
-        <MineField board={board} onOpenField={onOpenField} />
+        <MineField
+          board={board}
+          onOpenField={onOpenField}
+          onSelectField={onSelectField}
+        />
       </View>
     </View>
   );
