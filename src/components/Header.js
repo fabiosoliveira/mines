@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   flagContainer: {
-    flexDirection: 'row',,
+    flexDirection: 'row',
   },
   flagButton: {
     marginTop: 10,
