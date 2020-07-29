@@ -8,9 +8,9 @@ export default (props) => {
       visible={props.isVisible}
       animationType="slide"
       transparent={true}>
-      <View style={StyleSheet.frame}>
-        <View style={StyleSheet.container}>
-          <Text style={StyleSheet.title}>Selecione o Nível</Text>
+      <View style={styles.frame}>
+        <View style={styles.container}>
+          <Text style={styles.title}>Selecione o Nível</Text>
           <TouchableOpacity
             style={[styles.button, styles.bgEasy]}
             onPress={() => props.onLevelSelected(0.1)}>
