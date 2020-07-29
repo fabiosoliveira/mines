@@ -76,7 +76,6 @@ export default (props) => {
   }
 
   function onLevelSelected(level) {
-    console.warn(level);
     params.difficultLevel = level;
     createState();
   }
